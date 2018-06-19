@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+    <div id="calculator" class="calculator">
+        <div id="viewArea" class="view-area">
+            <div id="viewScrollContainer" class="view-scroll-container">
+                <ul id="historyArea" class="history-area"></ul>
+                <div id="currentOperateArea" class="current-operate-area"></div>
+            </div>
+        </div>
+        <table id="operateArea" class="operate-area" border="1">
+            <tr class="operate-row">
+                <td class="operate-item button allClear" data-type="operate" data-val="allClear">AC</td>
+                <td class="operate-item button" data-type="operate" data-val="backspace">C</td>
+                <td class="operate-item button" data-type="operate" data-val="/">÷</td>
+                <td class="operate-item button" data-type="operate" data-val="*">×</td>
+            </tr>
+            <tr class="operate-row">
+                <td class="operate-item button" data-type="num" data-val="7">7</td>
+                <td class="operate-item button" data-type="num" data-val="8">8</td>
+                <td class="operate-item button" data-type="num" data-val="9">9</td>
+                <td class="operate-item button" data-type="operate" data-val="-">-</td>
+            </tr>
+            <tr class="operate-row">
+                <td class="operate-item button" data-type="num" data-val="4">4</td>
+                <td class="operate-item button" data-type="num" data-val="5">5</td>
+                <td class="operate-item button" data-type="num" data-val="6">6</td>
+                <td class="operate-item button" data-type="operate" data-val="+">+</td>
+            </tr>
+            <tr class="operate-row">
+                <td class="operate-item button" data-type="num" data-val="1">1</td>
+                <td class="operate-item button" data-type="num" data-val="2">2</td>
+                <td class="operate-item button" data-type="num" data-val="3">3</td>
+                <td class="operate-item button equal" rowspan="3" data-type="operate" data-val="=">=</td>
+            </tr>
+            <tr class="operate-row">
+                <td class="operate-item button" data-type="operate" data-val="%">%</td>
+                <td class="operate-item button" data-type="num" data-val="0">0</td>
+                <td class="operate-item button" data-type="operate" data-val=".">.</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="js/index.js"></script>
+</html>
