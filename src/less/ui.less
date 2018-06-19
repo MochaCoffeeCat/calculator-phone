@@ -1,0 +1,65 @@
+@bg_color: #EFEFEF;
+
+html{
+    font-size: 50px;
+}
+.no-select{
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.transition(@type: all, @timer: 300ms, @liner: ease){
+    transition: @type @timer @liner;
+    -o-transition: @type @timer @liner;
+    -ms-transition: @type @timer @liner;
+    -moz-transition: @type @timer @liner;
+    -webkit-transition: @type @timer @liner;
+}
+.setPosition(@type: relative, @top: auto, @left: auto, @right: auto, @bottom: auto) {
+    position: @type;
+    top: @top;
+    left: @left;
+    right: @right;
+    bottom: @bottom;
+}
+
+.calculator{ background-color: @bg_color; overflow: hidden;
+    .setPosition(absolute, 0, 0, 0, 0);
+    .view-area{ background-color: #F1F3F3; position: absolute; width: 100%; height: 5rem; padding: .25rem; box-sizing: border-box; overflow: hidden;
+        .view-scroll-container{ position: absolute; bottom: 0; width: calc(100% - .5rem);
+            .history-area{ list-style: none; padding: 0; margin: 0;
+                .history-item{ padding: 0.2rem 0; border-bottom: 1px #A8AAAA dashed;
+                    .history-item-row{ text-align: right; color: #A8AAAA; font-size: .5rem; font-weight: lighter; }
+                }
+            }
+            .current-operate-area{
+                .view-row{ text-align: right; font-weight: lighter; bottom: 0;
+                    &.active{
+                        & > span { font-size: 1.2rem; color: #181818; }
+                    }
+                    & > span{ color: #A8AAAA; font-size: .75rem;
+                        .transition();
+                        & + span{ margin-left: .2rem; }
+                    }
+                }
+            }
+        }
+    }
+    .operate-area{ width: 101%; height: calc(100% - 5rem); border-collapse:collapse; overflow: hidden; border-color: #C3C5C6;
+        .setPosition(absolute, 5rem, auto, auto, 0);
+        .operate-row{ height: 20%;
+            .operate-item{ background-color: #FFFFFF; font-size: 0.6rem; font-weight: normal; width: 25%; text-align: center; box-sizing: border-box; color: #6F7480;
+                .no-select();
+                &:active{ background-color: #CCCCCC; }
+                &.allClear{ color: #FF5D00; }
+                &.equal{ background-color: #FB7730; color: #FFFFFF;
+                    &:active{ background-color: #DB6F2E; }
+                }
+            }
+        }
+    }
+}
